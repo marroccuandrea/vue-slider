@@ -36,8 +36,9 @@
                         <div
                         @mouseenter="isPlay = false"
                         @mouseleave="isPlay = true"
+                        @dblclick="isPlay = false"
                          class="my-carousel-images">
-                            <div @dblclick="isPlay = false" class="my-carousel-item active">
+                            <div class="my-carousel-item active">
                                 <img class="img-fluid" :src="images[counter].url" alt="">
                                 <div class="item-description px-3">
                                     <h2>{{images[counter].title}}</h2>
