@@ -34,6 +34,7 @@ createApp({
             ],
 
             counter:0,
+            isPlay: true
         }
     },
 
@@ -45,11 +46,19 @@ createApp({
             }else if(this.counter < 0){
                 this.counter = this.images.length -1;
             }
+        },
+
+        autoPlay(){
+            setInterval(() =>{
+                if(this.isPlay){
+                    this.nextPrev(true)
+                }
+            }, 3000)
         }
     },
 
     mounted(){
-        
+        this.autoPlay()
     },
 }).mount('#app')
 
