@@ -33,72 +33,17 @@ createApp({
                 },
             ],
 
-            counterImg:0,
+            counter:0,
         }
     },
 
     methods:{
 
-    }
+    },
+
+    mounted(){
+        
+    },
 }).mount('#app')
 
 
-
-
-//Contatore
-let counterImg = 0;
-
-const allImages = document.querySelectorAll('.my-carousel-item');
-allImages[0].classList.add('active');
-
-const thumbAll = document.querySelectorAll('.my-thumbnail');
-thumbAll[0].classList.add('active');
-
-// Funzioni per il carosello
-next.addEventListener('click', function(){
-    clickNext();
-})
-prev.addEventListener('click', function () {
-    clickPrev();
-})
-
-// Funzioni
-function clickNext(){
-    allImages[counterImg].classList.remove('active');
-    thumbAll[counterImg].classList.remove('active');
-    counterImg++;
-    if (counterImg === images.length) {
-        counterImg=0;
-    }
-    allImages[counterImg].classList.add('active');
-    thumbAll[counterImg].classList.add('active');
-}
-
-function clickPrev(){
-    allImages[counterImg].classList.remove('active');
-    thumbAll[counterImg].classList.remove('active');
-    counterImg--;
-    if(counterImg < 0){
-        counterImg = allImages.length - 1;
-    }
-    allImages[counterImg].classList.add('active');
-    thumbAll[counterImg].classList.add('active');
-}
-
-// Prendo il contenitore delle immagini e delle thumbnails per la funzione autoplay
-const imgContainer = document.querySelector('.my-carousel-container');
-// Scroll delle immagini ogni 3 secondi
-
-startScrolling();
-function startScrolling() {
-    // Call clickUp function ogni 3 secondi
-    interval = setInterval(clickNext, 3000);
-}
-// 3.
-function stopScrolling(){
-    clearInterval(interval);
-}
-// Si ferma lo scroll quado passo sopra all'immagine
-imgContainer.addEventListener( 'mouseover', stopScrolling );
-// Riprende lo scroll quando  si esce dall'immagine
-imgContainer.addEventListener( 'mouseout',  startScrolling );
