@@ -52,6 +52,8 @@ createApp({
             setInterval(() =>{
                 if(this.isPlay){
                     this.nextPrev(true)
+                }else{
+                    this.nextPrev(false)
                 }
             }, 3000)
         }
