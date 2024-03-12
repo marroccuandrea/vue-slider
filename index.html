@@ -44,7 +44,9 @@
                         </div>
 
                         <div class="my-thumbnails position-relative">
-                            <div v-for="(image, indice) in images" class="my-thumbnail active">
+                            <div v-for="(image, indice) in images"
+                            :class="{'active' : indice === counter}"
+                             class="my-thumbnail">
                                 <img class="img-fluid" :src="image.url" alt="">
                             </div>
                         </div>
